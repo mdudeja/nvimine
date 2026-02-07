@@ -15,6 +15,10 @@
 ---@field conform nvimine.config.plugin_config?
 ---@field indent_blankline nvimine.config.plugin_config?
 ---@field lspconfig nvimine.config.plugin_config?
+---@field nvim_tree nvimine.config.plugin_config?
+---@field nvim_web_devicons nvimine.config.plugin_config?
+---@field which_key nvimine.config.plugin_config?
+---@field gitsigns nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

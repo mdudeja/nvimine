@@ -17,6 +17,10 @@ M.default_plugins = {
     conform = { enabled = true, config = {} },
     indent_blankline = { enabled = true, config = {} },
     lspconfig = { enabled = true, config = {} },
+    nvim_tree = { enabled = true, config = {} },
+    nvim_web_devicons = { enabled = true, config = {} },
+    which_key = { enabled = true, config = {} },
+    gitsigns = { enabled = true, config = {} },
 }
 
 ---@type nvimine.config

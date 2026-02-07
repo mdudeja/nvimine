@@ -5,7 +5,6 @@ if not enabled then
 end
 
 local default_opts = {
-    flavour = "mocha",
     background = {
         light = "latte",
         dark = "mocha",
@@ -18,7 +17,8 @@ local default_opts = {
         shade = "dark",
         percentage = 0.15,
     },
-    no_italic = true,
+    no_italic = false,
+    auto_integrations = true,
 }
 
 local final_opts = vim.tbl_deep_extend("force", default_opts, merged_opts or {})
@@ -28,4 +28,8 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = final_opts,
+    config = function(_, opts)
+        require("catppuccin").setup(opts)
+        vim.cmd.colorscheme "catppuccin"
+    end,
 }
