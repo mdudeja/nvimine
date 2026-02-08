@@ -1,7 +1,7 @@
 local merged_opts, enabled = require("nvimine").get_plugin_config("which_key")
 
 if not enabled then
-    return {}
+    return
 end
 
 return {

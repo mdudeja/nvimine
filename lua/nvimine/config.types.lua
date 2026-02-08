@@ -1,14 +1,17 @@
 ---@meta
 
+---@class nvimine.config.lsp_config
+---@field enabled boolean
+---@field mason_name string
+
 ---@class nvimine.config.lsp_servers
----@field lua_ls boolean?
----@field rust_analyzer boolean?
----@field pyright boolean?
----@field ts_ls boolean?
+---@field lua_ls nvimine.config.lsp_config?
+---@field rust_analyzer nvimine.config.lsp_config?
+---@field pyright nvimine.config.lsp_config?
+---@field ts_ls nvimine.config.lsp_config?
 
 ---@class nvimine.config.plugin_config
 ---@field enabled boolean
----@field config table?
 
 ---@class nvimine.config.plugins
 ---@field catppuccin nvimine.config.plugin_config?
@@ -19,6 +22,8 @@
 ---@field nvim_web_devicons nvimine.config.plugin_config?
 ---@field which_key nvimine.config.plugin_config?
 ---@field gitsigns nvimine.config.plugin_config?
+---@field mason nvimine.config.plugin_config?
+---@field mason_tool_installer nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

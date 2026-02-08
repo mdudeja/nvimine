@@ -4,7 +4,7 @@ local settings = {
         workspace = {
             library = {
                 vim.fn.expand "$VIMRUNTIME/lua",
-                vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types",
+                vim.fn.stdpath "data" .. "/lazy/nvimine/config.types",
                 vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy",
                 "${3rd}/luv/library",
             },
@@ -14,9 +14,9 @@ local settings = {
 
 local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")
 
-vim.lsp.config("lua_ls", {
+vim.lsp.config("lua-language-server", {
     settings = settings,
     on_attach = on_attach,
 })
 
-vim.lsp.enable "lua_ls"
+vim.lsp.enable "lua-language-server"

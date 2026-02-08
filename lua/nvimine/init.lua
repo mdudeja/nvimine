@@ -14,6 +14,7 @@ local merge_plugin_opts = function(default_opts, user_opts)
     return merged_opts
 end
 
+--- @param config nvimine.config
 M.setup = function(config)
     if M.initialized then
         vim.api.nvim_echo({ { "Nvimine is already initialized.", "WarningMsg" } }, true, {})
@@ -48,8 +49,8 @@ M.load_lsp_servers = function()
         return
     end
 
-    for server, enabled in pairs(required_servers) do
-        if enabled then
+    for server, serverConfig in pairs(required_servers) do
+        if serverConfig.enabled then
             local ok, _ = pcall(require, "nvimine.lsp_servers." .. server)
             if not ok then
                 vim.api.nvim_echo({ { "Failed to enable LSP server: " .. server, "ErrorMsg" } }, true, {})
@@ -76,15 +77,19 @@ M.get_plugin_config = function(plugin_name)
     end
 
     local plugin_config = required_plugins[plugin_name]
-    if not plugin_config or not plugin_config.enabled then
+    if not plugin_config.enabled then
         return nil, false
     end
 
-    local merged_opts = {}
-    if plugin_config.config then
-        local default_opts = default_plugins[plugin_name] and default_plugins[plugin_name].config or {}
-        merged_opts = merge_plugin_opts(default_opts, plugin_config.config)
+    -- Try to load config file, fall back to empty table if doesn't exist
+    local ok, plugin_default_opts = pcall(require, "nvimine.configs." .. plugin_name)
+    if not ok then
+        plugin_default_opts = {}
     end
+
+    local plugin_opts = plugin_config.config or {}
+
+    local merged_opts = merge_plugin_opts(plugin_default_opts, plugin_opts)
 
     return merged_opts, true
 end

@@ -5,22 +5,24 @@ M.config = nil
 
 ---@type nvimine.config.lsp_servers
 M.default_lsp_servers = {
-    lua_ls = true,
-    rust_analyzer = true,
-    pyright = true,
-    ts_ls = true,
+    lua_ls = { enabled = true, mason_name = "lua-language-server" },
+    rust_analyzer = { enabled = true, mason_name = "rust-analyzer" },
+    pyright = { enabled = true, mason_name = "pyright" },
+    ts_ls = { enabled = true, mason_name = "typescript-language-server" },
 }
 
 ---@type nvimine.config.plugins
 M.default_plugins = {
-    catppuccin = { enabled = true, config = {} },
-    conform = { enabled = true, config = {} },
-    indent_blankline = { enabled = true, config = {} },
-    lspconfig = { enabled = true, config = {} },
-    nvim_tree = { enabled = true, config = {} },
-    nvim_web_devicons = { enabled = true, config = {} },
-    which_key = { enabled = true, config = {} },
-    gitsigns = { enabled = true, config = {} },
+    catppuccin = { enabled = true },
+    conform = { enabled = true },
+    indent_blankline = { enabled = true },
+    lspconfig = { enabled = true },
+    nvim_tree = { enabled = true },
+    nvim_web_devicons = { enabled = true },
+    which_key = { enabled = true },
+    gitsigns = { enabled = true },
+    mason = { enabled = true },
+    mason_tool_installer = { enabled = true },
 }
 
 ---@type nvimine.config
