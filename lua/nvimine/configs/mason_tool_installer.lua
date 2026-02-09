@@ -22,8 +22,6 @@ local function get_formatters_from_conform()
         end
     end
 
-    vim.api.nvim_echo({ { "Formatters to install: " .. table.concat(formatters, ", "), "InfoMsg" } }, true, {})
-
     return formatters
 end
 

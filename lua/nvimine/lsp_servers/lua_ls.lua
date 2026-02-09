@@ -13,10 +13,12 @@ local settings = {
 }
 
 local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 vim.lsp.config("lua-language-server", {
     settings = settings,
     on_attach = on_attach,
+    capabilities = capabilities,
 })
 
-vim.lsp.enable "lua-language-server"
+vim.lsp.enable("lua-language-server")

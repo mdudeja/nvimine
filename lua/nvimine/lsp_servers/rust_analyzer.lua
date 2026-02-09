@@ -10,10 +10,12 @@ local settings = {
 }
 
 local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")
+local capabilities = vim.lsp.protocol.make_client_capabilities() 
 
 vim.lsp.config("rust-analyzer", {
     settings = settings,
     on_attach = on_attach,
+    capabilities = capabilities,
 })
 
-vim.lsp.enable "rust-analyzer"
+vim.lsp.enable("rust-analyzer")

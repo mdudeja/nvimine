@@ -1,8 +1,9 @@
-local settings = {}
+local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")
+local capabilities = vim.lsp.protocol.make_client_capabilities() 
 
 vim.lsp.config("pyright", {
-    settings = settings,
-    on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach"),
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
 
-vim.lsp.enable "pyright"
+vim.lsp.enable("pyright")

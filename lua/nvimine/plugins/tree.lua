@@ -1,4 +1,4 @@
-local merged_opts, enabled = require("nvimine").get_plugin_config("nvim_tree")
+local merged_opts, enabled = require("nvimine").get_plugin_config("tree")
 
 if not enabled then
     return

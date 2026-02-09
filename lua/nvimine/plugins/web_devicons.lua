@@ -1,4 +1,4 @@
-local merged_opts, enabled = require("nvimine").get_plugin_config("nvim_web_devicons")
+local merged_opts, enabled = require("nvimine").get_plugin_config("web_devicons")
 
 if not enabled then
     return

@@ -24,6 +24,9 @@
 ---@field gitsigns nvimine.config.plugin_config?
 ---@field mason nvimine.config.plugin_config?
 ---@field mason_tool_installer nvimine.config.plugin_config?
+---@field nvim_cmp nvimine.config.plugin_config?
+---@field treesitter nvimine.config.plugin_config?
+---@field telescope nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

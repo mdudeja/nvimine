@@ -17,12 +17,15 @@ M.default_plugins = {
     conform = { enabled = true },
     indent_blankline = { enabled = true },
     lspconfig = { enabled = true },
-    nvim_tree = { enabled = true },
-    nvim_web_devicons = { enabled = true },
+    tree = { enabled = true },
+    web_devicons = { enabled = true },
     which_key = { enabled = true },
     gitsigns = { enabled = true },
     mason = { enabled = true },
     mason_tool_installer = { enabled = true },
+    cmp = { enabled = true },
+    treesitter = { enabled = true },
+    telescope = { enabled = true },
 }
 
 ---@type nvimine.config
