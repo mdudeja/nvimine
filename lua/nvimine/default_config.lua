@@ -15,17 +15,13 @@ M.default_lsp_servers = {
 M.default_plugins = {
     catppuccin = { enabled = true },
     conform = { enabled = true },
-    indent_blankline = { enabled = true },
     lspconfig = { enabled = true },
-    tree = { enabled = true },
     web_devicons = { enabled = true },
-    which_key = { enabled = true },
-    gitsigns = { enabled = true },
     mason = { enabled = true },
     mason_tool_installer = { enabled = true },
     cmp = { enabled = true },
     treesitter = { enabled = true },
-    telescope = { enabled = true },
+    snacks = { enabled = true },
 }
 
 ---@type nvimine.config

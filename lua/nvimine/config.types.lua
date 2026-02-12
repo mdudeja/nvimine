@@ -16,17 +16,13 @@
 ---@class nvimine.config.plugins
 ---@field catppuccin nvimine.config.plugin_config?
 ---@field conform nvimine.config.plugin_config?
----@field indent_blankline nvimine.config.plugin_config?
 ---@field lspconfig nvimine.config.plugin_config?
----@field nvim_tree nvimine.config.plugin_config?
 ---@field nvim_web_devicons nvimine.config.plugin_config?
----@field which_key nvimine.config.plugin_config?
----@field gitsigns nvimine.config.plugin_config?
 ---@field mason nvimine.config.plugin_config?
 ---@field mason_tool_installer nvimine.config.plugin_config?
 ---@field nvim_cmp nvimine.config.plugin_config?
 ---@field treesitter nvimine.config.plugin_config?
----@field telescope nvimine.config.plugin_config?
+---@field snacks nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

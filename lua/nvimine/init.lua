@@ -51,9 +51,11 @@ M.load_lsp_servers = function()
 
     for server, serverConfig in pairs(required_servers) do
         if serverConfig.enabled then
-            local ok, _ = pcall(require, "nvimine.lsp_servers." .. server)
+            local ok, result = pcall(require, "nvimine.lsp_servers." .. server)
             if not ok then
                 vim.api.nvim_echo({ { "Failed to enable LSP server: " .. server, "ErrorMsg" } }, true, {})
+                -- print error
+                vim.api.nvim_echo({ { result, "ErrorMsg" } }, true, {})
             end
         end
     end
