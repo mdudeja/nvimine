@@ -4,6 +4,7 @@ local g = vim.g
 
 opt.termguicolors = true
 opt.fillchars = { eob = " " }
+opt.runtimepath:append(vim.fn.stdpath('data') .. '/site')
 
 o.laststatus = 3
 o.showmode = false
@@ -37,6 +38,8 @@ o.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
+
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line

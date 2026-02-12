@@ -1,5 +1,5 @@
 local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")("typescript")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("nvimine.lsp_servers.serverCapabilities")
 
 local root_markers = {
     "package-lock.json",
@@ -19,10 +19,8 @@ vim.lsp.config("typescript-language-server", {
     filetypes = {
         "javascript",
         "javascriptreact",
-        "javascript.jsx",
         "typescript",
         "typescriptreact",
-        "typescript.tsx"
     },
     root_dir = function(bufnr, on_dir)
         local deno_path = vim.fs.root(bufnr, { "deno.json", "deno.jsonc", "deno.lock" })

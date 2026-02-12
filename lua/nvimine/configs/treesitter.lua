@@ -15,6 +15,14 @@ return {
         "dockerfile",
         "mermaid",
         "vim",
-        "vimdoc"
+        "vimdoc",
+        "latex",
+        "norg",
+        "scss",
+        "svelte",
+        "tsx",
+        "vue",
+        "typst",
+        "regex"
     },
 }

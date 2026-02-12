@@ -48,7 +48,7 @@ local function getSettings()
 end
 
 local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")("lua")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("nvimine.lsp_servers.serverCapabilities")
 
 vim.lsp.config("lua-language-server", {
     cmd = { "lua-language-server" },

@@ -19,12 +19,12 @@ M.default_plugins = {
     web_devicons = { enabled = true },
     mason = { enabled = true },
     mason_tool_installer = { enabled = true },
-    cmp = { enabled = true },
     treesitter = { enabled = true },
     snacks = { enabled = true },
     which_key = { enabled = true },
     auto_session = { enabled = true },
     edgy = { enabled = true },
+    blink_cmp = { enabled = true },
 }
 
 ---@type nvimine.config

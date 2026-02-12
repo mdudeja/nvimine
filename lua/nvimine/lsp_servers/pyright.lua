@@ -1,5 +1,5 @@
 local on_attach = require("nvimine.lsp_servers.mapOverridesOnAttach")("python")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("nvimine.lsp_servers.serverCapabilities")
 
 local function set_python_path(command)
     local path = command.args
