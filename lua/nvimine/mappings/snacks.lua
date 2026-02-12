@@ -72,8 +72,6 @@ map("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffe
 map("n", "<leader>cR", function() Snacks.rename.rename_file() end, { desc = "Rename File" })
 map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit" })
 map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notifications" })
-map("n", "<c-/>", function() Snacks.terminal() end, { desc = "Toggle Terminal" })
-map("n", "<c-_>", function() Snacks.terminal() end, { desc = "which_key_ignore" })
 map({ "n", "v" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
 map({ "n", "t" }, "]]", function() Snacks.words.jump(vim.v.count1) end, { desc = "Next Reference" })
 map({ "n", "t" }, "[[", function() Snacks.words.jump(-vim.v.count1) end, { desc = "Prev Reference" })
@@ -92,3 +90,18 @@ map("n", "<leader>N", function()
         },
     })
 end, { desc = "Neovim News" })
+
+map({ "n", "t" }, "<leader>t", function() Snacks.terminal() end, { desc = "Terminal: toggle" })
+map({ "n", "t" }, "<C-`>", function()
+    local terminals = Snacks.terminal.list()
+    if #terminals == 0 then
+        Snacks.terminal()
+    else
+        for _, term in ipairs(terminals) do
+            term:toggle()
+        end
+    end
+end, { desc = "Terminal: toggle all", remap = true })
+
+-- show dashboard
+map("n", "<leader>0", function() Snacks.dashboard.open() end, { desc = "Dashboard" })

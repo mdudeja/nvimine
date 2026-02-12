@@ -1,8 +1,13 @@
 return {
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = { enabled = true, example = "advanced" },
     explorer = { enabled = true },
-    indent = { enabled = true },
+    indent = {
+        enabled = true,
+        chunk = {
+            enabled = true,
+        }
+    },
     input = { enabled = true },
     notifier = {
         enabled = true,
@@ -14,6 +19,11 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    image = { enabled = true },
+    terminal = { enabled = true },
+    lazygit = { enabled = true },
+    gitbrowse = { enabled = true },
+    scratch = { enabled = true },
     styles = {
         notification = {
             wo = { wrap = true } -- Wrap notifications

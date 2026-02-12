@@ -23,6 +23,9 @@
 ---@field nvim_cmp nvimine.config.plugin_config?
 ---@field treesitter nvimine.config.plugin_config?
 ---@field snacks nvimine.config.plugin_config?
+---@field which_key nvimine.config.plugin_config?
+---@field auto_session nvimine.config.plugin_config?
+---@field edgy nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

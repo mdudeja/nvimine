@@ -22,6 +22,9 @@ M.default_plugins = {
     cmp = { enabled = true },
     treesitter = { enabled = true },
     snacks = { enabled = true },
+    which_key = { enabled = true },
+    auto_session = { enabled = true },
+    edgy = { enabled = true },
 }
 
 ---@type nvimine.config
