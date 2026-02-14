@@ -7,4 +7,5 @@ end
 return {
     "stevearc/conform.nvim",
     opts = merged_opts,
+    event = "User FilePost"
 }

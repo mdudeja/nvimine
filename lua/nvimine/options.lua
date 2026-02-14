@@ -4,7 +4,17 @@ local g = vim.g
 
 opt.termguicolors = true
 opt.fillchars = { eob = " " }
-opt.runtimepath:append(vim.fn.stdpath('data') .. '/site')
+opt.runtimepath:append(vim.fn.stdpath "data" .. "/site")
+
+opt.foldcolumn = "auto:3"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append "<>[]hl"
+
+o.autowriteall = true
 
 o.laststatus = 3
 o.showmode = false
@@ -27,6 +37,7 @@ o.mouse = "a"
 
 -- Numbers
 o.number = true
+o.relativenumber = true
 o.numberwidth = 2
 o.ruler = false
 
@@ -38,12 +49,7 @@ o.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
-
 o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
 
 -- disable some default providers
 g.loaded_node_provider = 0

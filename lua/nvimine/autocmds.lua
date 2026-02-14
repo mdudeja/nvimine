@@ -1,5 +1,4 @@
 local group = vim.api.nvim_create_augroup("NvimineAutoCmds", { clear = true })
-
 vim.api.nvim_create_autocmd("FileType", {
     group = group,
     pattern = { '<filetype>' },
@@ -7,7 +6,6 @@ vim.api.nvim_create_autocmd("FileType", {
         pcall(vim.treesitter.start)
     end,
 })
-
 vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     group = group,
     callback = function(args)
@@ -30,6 +28,18 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
             end)
         end
     end,
+})
+
+local incsearch_group = vim.api.nvim_create_augroup("NvimineIncSearch", { clear = true })
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+    group = incsearch_group,
+    pattern = "/*",
+    command = "set hlsearch",
+})
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+    group = incsearch_group,
+    pattern = "/*",
+    command = "set nohlsearch",
 })
 
 vim.api.nvim_create_user_command("TSInstallAll", function()

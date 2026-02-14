@@ -9,6 +9,7 @@
 ---@field rust_analyzer nvimine.config.lsp_config?
 ---@field pyright nvimine.config.lsp_config?
 ---@field ts_ls nvimine.config.lsp_config?
+---@field copilot_ls nvimine.config.lsp_config?
 
 ---@class nvimine.config.plugin_config
 ---@field enabled boolean
@@ -25,7 +26,9 @@
 ---@field which_key nvimine.config.plugin_config?
 ---@field auto_session nvimine.config.plugin_config?
 ---@field edgy nvimine.config.plugin_config?
----@field blink_cmp nvimine.config.plugin_config?
+---@field origami nvimine.config.plugin_config?
+---@field lualine nvimine.config.plugin_config?
+---@field flash nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.
