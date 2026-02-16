@@ -28,6 +28,7 @@ M.default_plugins = {
   origami = { enabled = true },
   lualine = { enabled = true },
   flash = { enabled = true },
+  gitsigns = { enabled = true },
 }
 
 ---@type nvimine.config

@@ -29,6 +29,7 @@
 ---@field origami nvimine.config.plugin_config?
 ---@field lualine nvimine.config.plugin_config?
 ---@field flash nvimine.config.plugin_config?
+---@field gitsigns nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

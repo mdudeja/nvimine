@@ -1,3 +1,4 @@
+--@type Origami.config
 return {
   useLspFoldsWithTreesitterFallback = {
     enabled = true,

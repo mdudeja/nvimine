@@ -219,9 +219,6 @@ map("n", "<leader>N", function()
   }
 end, { desc = "Neovim News" })
 
-map({ "n", "t" }, "<leader>t", function()
-  Snacks.terminal()
-end, { desc = "Terminal: toggle" })
 map({ "n", "t" }, "<C-`>", function()
   local terminals = Snacks.terminal.list()
   if #terminals == 0 then
@@ -232,6 +229,13 @@ map({ "n", "t" }, "<C-`>", function()
     end
   end
 end, { desc = "Terminal: toggle all", remap = true })
+
+map({ "n", "t" }, "<leader>ts", function()
+  local terminals = Snacks.terminal.list()
+  Snacks.terminal(nil, {
+    count = terminals and #terminals + 1 or 1,
+  })
+end, { desc = "Terminal: vertical split" })
 
 -- show dashboard
 map("n", "<leader>0", function()

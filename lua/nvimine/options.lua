@@ -17,7 +17,8 @@ opt.whichwrap:append "<>[]hl"
 o.autowriteall = true
 
 o.laststatus = 3
-o.showmode = false
+o.showmode = true
+o.selectmode = "mouse,key"
 o.splitkeep = "screen"
 
 o.clipboard = "unnamedplus"
