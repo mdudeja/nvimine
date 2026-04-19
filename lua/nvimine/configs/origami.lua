@@ -17,7 +17,7 @@ return {
     disableOnFt = { "snacks_picker_input" }, ---@type string[]
   },
   autoFold = {
-    enabled = true,
+    enabled = false,
     kinds = { "comment", "imports" }, ---@type lsp.FoldingRangeKind[]
   },
   foldKeymaps = {

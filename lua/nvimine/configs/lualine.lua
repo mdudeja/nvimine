@@ -5,7 +5,7 @@ return {
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {
-      statusline = {},
+      statusline = { 'agentic' },
       winbar = {},
     },
     ignore_focus = {},
@@ -35,10 +35,13 @@ return {
     lualine_a = { "mode" },
     lualine_b = { "branch", {
       "diagnostics",
-      always_visible = true,
     } },
     lualine_c = { "filename" },
-    lualine_x = { "encoding", "fileformat", "filetype" },
+    lualine_x = {
+      "encoding",
+      "fileformat",
+      "filetype"
+    },
     lualine_y = { "lsp_status" },
     lualine_z = {
       {
@@ -72,6 +75,5 @@ return {
     lualine_x = {},
     lualine_y = {},
     lualine_z = {},
-  },
-  extensions = {},
+  }
 }
