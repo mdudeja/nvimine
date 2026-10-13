@@ -1,7 +1,10 @@
 local group = vim.api.nvim_create_augroup("NvimineAutoCmds", { clear = true })
+
+require("nvimine.popup_menu")
+
 vim.api.nvim_create_autocmd("FileType", {
     group = group,
-    pattern = { '<filetype>' },
+    pattern = { "<filetype>" },
     callback = function()
         pcall(vim.treesitter.start)
     end,
