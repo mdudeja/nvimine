@@ -170,10 +170,8 @@ map("n", "<leader>bd", function()
   Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
 
-map("n", "<leader>bda", function()
+map("n", "<leader>bD", function()
   local all_buffers = vim.api.nvim_list_bufs()
-
-  dd(all_buffers)
 
   if #all_buffers == 0 then
     Snacks.notify("No buffers to delete", "info")
@@ -243,12 +241,12 @@ map({ "n", "t" }, "<C-`>", function()
   end
 end, { desc = "Terminal: toggle all", remap = true })
 
-map({ "n", "t" }, "<leader>ts", function()
+map("n", "<leader>ts", function()
   local terminals = Snacks.terminal.list()
   Snacks.terminal(nil, {
     count = terminals and #terminals + 1 or 1,
   })
-end, { desc = "Terminal: vertical split" })
+end, { desc = "Terminal: open another" })
 
 -- show dashboard
 map("n", "<leader>0", function()

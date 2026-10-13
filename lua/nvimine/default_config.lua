@@ -15,6 +15,8 @@ M.default_lsp_servers = {
 ---@type nvimine.config.plugins
 M.default_plugins = {
   blinkcmp = { enabled = true },
+  blink_pairs = { enabled = true },
+  copilot_lsp = { enabled = true },
   catppuccin = { enabled = true },
   conform = { enabled = true },
   lspconfig = { enabled = true },

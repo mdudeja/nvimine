@@ -15,6 +15,10 @@
 ---@field enabled boolean
 
 ---@class nvimine.config.plugins
+---@field blinkcmp nvimine.config.plugin_config?
+---@field blink_pairs nvimine.config.plugin_config?
+--- Copilot NES; required by the copilot_ls LSP server
+---@field copilot_lsp nvimine.config.plugin_config?
 ---@field catppuccin nvimine.config.plugin_config?
 ---@field conform nvimine.config.plugin_config?
 ---@field lspconfig nvimine.config.plugin_config?

@@ -7,8 +7,8 @@ map("v", "<C-/>", "gc", { desc = "toggle comment", remap = true })
 -- Save on CTRL + s
 map("n", "<C-s>", ":w<CR>", { desc = "save file" })
 
--- Open file in new tab
-map("n", "<C-t>", ":tabnew<CR>", { desc = "open file in new tab" })
+-- Open new tab (<C-t> stays the tag-stack pop that pairs with <C-]>)
+map("n", "<leader>tn", ":tabnew<CR>", { desc = "open new tab" })
 
 -- Navigate between tabs
 map("n", "<C-Tab>", ":tabnext<CR>", { desc = "next tab" })
