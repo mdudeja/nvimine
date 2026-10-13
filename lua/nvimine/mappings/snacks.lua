@@ -221,11 +221,24 @@ end, { desc = "Neovim News" })
 
 map({ "n", "t" }, "<C-`>", function()
   local terminals = Snacks.terminal.list()
-  if #terminals == 0 then
+  -- agentic.nvim's agent shells (b:agentic_shell) toggle along, but don't
+  -- count as "your" terminal: without one of yours, open it.
+  local mine = vim.tbl_filter(function(t)
+    return not vim.b[t.buf].agentic_shell
+  end, terminals)
+  if #mine == 0 then
     Snacks.terminal()
-  else
-    for _, term in ipairs(terminals) do
-      term:toggle()
+    return
+  end
+  -- Toggle as a group: if any is showing, hide all; otherwise show all.
+  local any_shown = vim.iter(terminals):any(function(t)
+    return t:valid()
+  end)
+  for _, term in ipairs(terminals) do
+    if any_shown then
+      term:hide()
+    else
+      term:show()
     end
   end
 end, { desc = "Terminal: toggle all", remap = true })
