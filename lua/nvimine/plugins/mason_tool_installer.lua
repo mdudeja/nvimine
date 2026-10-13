@@ -7,6 +7,7 @@ end
 
 return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    commit = "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
     dependencies = {
         "williamboman/mason.nvim",
     },

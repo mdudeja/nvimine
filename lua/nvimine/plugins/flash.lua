@@ -6,6 +6,7 @@ end
 
 return {
     "folke/flash.nvim",
+    commit = "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
     event = "VeryLazy",
     opts = merged_opts,
     keys = {

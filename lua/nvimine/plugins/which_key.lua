@@ -6,6 +6,7 @@ end
 
 return {
     "folke/which-key.nvim",
+    commit = "3aab2147e74890957785941f0c1ad87d0a44c15a",
     -- Load at startup, not on first keypress: setup() finishes asynchronously,
     -- so a key that both loads and calls show() runs before it's ready.
     event = "VeryLazy",

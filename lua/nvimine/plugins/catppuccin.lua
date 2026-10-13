@@ -6,6 +6,7 @@ end
 
 return {
     "catppuccin/nvim",
+    commit = "edefef779ab08ce1a4a404713e3012b0d202bd35",
     name = "catppuccin",
     lazy = false,
     opts = merged_opts,

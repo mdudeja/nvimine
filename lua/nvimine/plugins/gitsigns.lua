@@ -6,6 +6,7 @@ end
 
 return {
   "lewis6991/gitsigns.nvim",
+  commit = "851a051e2bd2caba97e23314c68d69f1b1cf5d19",
   event = "User FilePost",
   opts = mergedConfig or {},
   config = function(_, options)

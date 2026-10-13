@@ -6,7 +6,8 @@ return {
     section_separators = { left = "", right = "" },
     disabled_filetypes = {
       statusline = { 'agentic' },
-      winbar = {},
+      -- The explorer's sidebar container: no winbar row at all.
+      winbar = { 'snacks_layout_box' },
     },
     ignore_focus = {},
     always_divide_middle = true,
@@ -75,5 +76,15 @@ return {
     lualine_x = {},
     lualine_y = {},
     lualine_z = {},
-  }
+  },
+  extensions = {
+    -- The snacks explorer's sidebar is an unnamed container window (its list
+    -- and input are floats inside it), so "filename" shows [No Name]. A split
+    -- always has a statusline with laststatus=2; label it instead.
+    {
+      filetypes = { "snacks_layout_box" },
+      sections = { lualine_a = { function() return "Explorer" end } },
+      inactive_sections = { lualine_c = { function() return "Explorer" end } },
+    },
+  },
 }

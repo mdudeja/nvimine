@@ -1,5 +1,6 @@
 local M = {}
 M.initialized = false
+M.version = require("nvimine.version")
 
 local merge_plugin_opts = function(default_opts, user_opts)
     if type(user_opts) ~= "table" then
@@ -18,6 +19,14 @@ end
 M.setup = function(config)
     if M.initialized then
         vim.api.nvim_echo({ { "Nvimine is already initialized.", "WarningMsg" } }, true, {})
+        return
+    end
+
+    if vim.fn.has("nvim-" .. M.version.min_nvim) == 0 then
+        vim.api.nvim_echo({ {
+            "Nvimine requires Neovim " .. M.version.min_nvim .. "+, found " .. tostring(vim.version()),
+            "ErrorMsg",
+        } }, true, {})
         return
     end
 
