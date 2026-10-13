@@ -12,6 +12,13 @@ M.check = function()
     vim.health.error("Neovim " .. version.min_nvim .. "+ is required, found " .. tostring(vim.version()))
   end
 
+  local has_snacks, snacks = pcall(require, "snacks")
+  if has_snacks then
+    -- rawget: Snacks' __index would otherwise try to require("snacks.fork_version")
+    local fork_version = rawget(snacks, "fork_version")
+    vim.health.info("snacks.nvim: " .. (fork_version or (tostring(snacks.version) .. " (upstream)")))
+  end
+
   if require("nvimine").initialized then
     vim.health.ok("setup() has been called")
   else

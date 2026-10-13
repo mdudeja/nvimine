@@ -6,7 +6,7 @@ end
 
 return {
     "mdudeja/snacks.nvim",
-    dev = true,
+    tag = "v2.31.0-nvimine.1",
     priority = 1000,
     lazy = false,
     opts = merged_opts,
