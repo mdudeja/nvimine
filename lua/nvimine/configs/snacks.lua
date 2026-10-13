@@ -12,6 +12,13 @@ return {
   notifier = {
     enabled = true,
     timeout = 3000,
+    -- Only decides the popup: every notification is still kept in the
+    -- history (<leader>n). Routine agentic.nvim server chatter stays quiet;
+    -- its warnings and errors still pop up.
+    filter = function(notif)
+      local quiet = notif.msg:find("^%[agentic%]") and vim.log.levels[notif.level:upper()] < vim.log.levels.WARN
+      return not quiet
+    end,
   },
   picker = {
     enabled = true,
