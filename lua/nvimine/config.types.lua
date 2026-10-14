@@ -10,6 +10,8 @@
 ---@field pyright nvimine.config.lsp_config?
 ---@field ts_ls nvimine.config.lsp_config?
 ---@field copilot_ls nvimine.config.lsp_config?
+---@field jsonls nvimine.config.lsp_config?
+---@field yamlls nvimine.config.lsp_config?
 
 ---@class nvimine.config.plugin_config
 ---@field enabled boolean
@@ -34,6 +36,18 @@
 ---@field lualine nvimine.config.plugin_config?
 ---@field flash nvimine.config.plugin_config?
 ---@field gitsigns nvimine.config.plugin_config?
+---@field nvim_surround nvimine.config.plugin_config?
+---@field mini_ai nvimine.config.plugin_config?
+---@field trouble nvimine.config.plugin_config?
+---@field nvim_lint nvimine.config.plugin_config?
+---@field grug_far nvimine.config.plugin_config?
+---@field dap nvimine.config.plugin_config?
+---@field diffview nvimine.config.plugin_config?
+---@field todo_comments nvimine.config.plugin_config?
+---@field guess_indent nvimine.config.plugin_config?
+---@field ts_autotag nvimine.config.plugin_config?
+--- JSON/YAML schemas; used by the jsonls and yamlls LSP servers
+---@field schemastore nvimine.config.plugin_config?
 
 ---@class nvimine.config
 --- Enables or disables nvimine. If disabled, nvimine will not do anything.

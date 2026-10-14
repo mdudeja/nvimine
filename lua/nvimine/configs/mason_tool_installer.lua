@@ -50,18 +50,61 @@ local function get_enabled_lsp_servers()
     return servers
 end
 
--- Combine LSP servers and formatters
-local function get_tools_to_install()
-    local tools = {}
+-- Linters from nvim-lint (names match Mason package names)
+local function get_linters_from_nvim_lint()
+    local lint_opts, lint_enabled = require("nvimine").get_plugin_config("nvim_lint")
 
-    -- Add LSP servers
-    for _, server in ipairs(get_enabled_lsp_servers()) do
-        table.insert(tools, server)
+    if not lint_enabled or not lint_opts or type(lint_opts.linters_by_ft) ~= "table" then
+        return {}
     end
 
-    -- Add formatters
+    local linters = {}
+    for _, linter_list in pairs(lint_opts.linters_by_ft) do
+        for _, linter in ipairs(linter_list) do
+            table.insert(linters, linter)
+        end
+    end
+
+    return linters
+end
+
+-- Debug adapters for nvim-dap
+local function get_dap_adapters()
+    local dap_opts, dap_enabled = require("nvimine").get_plugin_config("dap")
+
+    if not dap_enabled or not dap_opts or type(dap_opts.adapters) ~= "table" then
+        return {}
+    end
+
+    return dap_opts.adapters
+end
+
+-- Combine LSP servers, formatters, linters and debug adapters
+local function get_tools_to_install()
+    local tools = {}
+    local seen = {}
+
+    local function add(tool)
+        if not seen[tool] then
+            seen[tool] = true
+            table.insert(tools, tool)
+        end
+    end
+
+    for _, server in ipairs(get_enabled_lsp_servers()) do
+        add(server)
+    end
+
     for _, formatter in ipairs(get_formatters_from_conform()) do
-        table.insert(tools, formatter)
+        add(formatter)
+    end
+
+    for _, linter in ipairs(get_linters_from_nvim_lint()) do
+        add(linter)
+    end
+
+    for _, adapter in ipairs(get_dap_adapters()) do
+        add(adapter)
     end
 
     return tools

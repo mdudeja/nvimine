@@ -10,6 +10,8 @@ M.default_lsp_servers = {
   pyright = { enabled = true, mason_name = "pyright" },
   ts_ls = { enabled = true, mason_name = "typescript-language-server" },
   copilot_ls = { enabled = true, mason_name = "copilot-language-server" },
+  jsonls = { enabled = true, mason_name = "json-lsp" },
+  yamlls = { enabled = true, mason_name = "yaml-language-server" },
 }
 
 ---@type nvimine.config.plugins
@@ -23,15 +25,26 @@ M.default_plugins = {
   web_devicons = { enabled = true },
   mason = { enabled = true },
   mason_tool_installer = { enabled = true },
+  nvim_surround = { enabled = true },
   treesitter = { enabled = true },
   snacks = { enabled = true },
   which_key = { enabled = true },
-  auto_session = { enabled = true },
+  auto_session = { enabled = false },
   edgy = { enabled = true },
   origami = { enabled = true },
   lualine = { enabled = true },
   flash = { enabled = true },
   gitsigns = { enabled = true },
+  mini_ai = { enabled = true },
+  trouble = { enabled = true },
+  nvim_lint = { enabled = true },
+  grug_far = { enabled = true },
+  dap = { enabled = true },
+  diffview = { enabled = true },
+  todo_comments = { enabled = true },
+  guess_indent = { enabled = true },
+  ts_autotag = { enabled = true },
+  schemastore = { enabled = true },
 }
 
 ---@type nvimine.config
